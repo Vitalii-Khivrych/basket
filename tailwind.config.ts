@@ -26,11 +26,12 @@ const config: Config = {
         },
       },
       colors: {
-        primary: "#1A1A1F",
-        secondary: "#4B4B4B",
-        label: "#333333",
-        hover: "#FF5800",
-        accent: "#FF5800",
+        primary: "#FFF",
+        secondary: "#9EA2AA",
+        black: "#0f0f11",
+        white: '#FFFFFF',
+        hover: "#FBD13E",
+        accent: "#FBD13E",
         error: "#F43F5E",
       },
       backgroundImage: {

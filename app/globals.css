@@ -17,7 +17,7 @@ body::before {
   background: url(/images/bg.png) 50% / cover no-repeat;
   position: absolute;
   z-index: -1;
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
 }
 
