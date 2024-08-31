@@ -1,12 +1,28 @@
 'use client';
 
-import { useAppSelector } from '@/store/hooks';
+import { BasketDishesItem, BasketDishesList, BasketTitle } from '@/components';
+import { SingleMenuLItemProps } from '@/components/MenuItem/MenuItem.props';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { dishRemoved } from '@/store/order/order.slice';
 import { RootState } from '@/store/store';
 
 export default function BasketPage({ params }: { params: { checkoutId: string } }) {
-	const dishFromOrder = useAppSelector((state: RootState) => state.order);
+	const dishesInOrder = useAppSelector((state: RootState) => state.order);
+	const amountItemsInBasket = dishesInOrder.length;
+	const isOrderExists = dishesInOrder.length > 0;
 
-	console.log('dishFromOrder', dishFromOrder);
+	const dispatch = useAppDispatch();
 
-	return <div>My Post: {params.checkoutId}</div>;
+	const handleClickRemoveDish = (dish: SingleMenuLItemProps) => dispatch(dishRemoved(dish));
+
+	return (
+		<section className="py-4">
+			<div className="container">
+				<BasketTitle count={amountItemsInBasket} styles="mb-5" />
+				{isOrderExists && (
+					<BasketDishesList dishes={dishesInOrder} remove={handleClickRemoveDish} />
+				)}
+			</div>
+		</section>
+	);
 }

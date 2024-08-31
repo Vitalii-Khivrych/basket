@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Tillana } from 'next/font/google';
+import { Amiko } from 'next/font/google';
 
 import { Header } from '@/components';
 import StoreProvider from './StoreProvider';
 
 import './globals.css';
 
-const tillana = Tillana({
+const amiko = Amiko({
 	subsets: ['latin'],
 	weight: '400',
 });
@@ -24,7 +24,7 @@ export default function RootLayout({
 	return (
 		<StoreProvider>
 			<html lang="en">
-				<body className={tillana.className}>
+				<body className={amiko.className}>
 					<Header />
 					<main>{children}</main>
 					<footer>This will be some footer</footer>

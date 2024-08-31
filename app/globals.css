@@ -2,28 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #0f0f11;
+@layer base {
+	body {
+		color: #fff;
+		font-style: normal;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		background: #0f0f11;
+	}
+
+	body::before {
+		content: '';
+		display: block;
+		opacity: 0.4;
+		background: url(/images/bg.png) 50% / cover no-repeat;
+		position: absolute;
+		z-index: -1;
+		height: 200vh;
+		width: 100vw;
+	}
+
+	main {
+		height: 100%;
+		flex-grow: 1;
+	}
 }
 
-body::before {
-  content: "";
-  display: block;
-  opacity: 0.4;
-  background: url(/images/bg.png) 50% / cover no-repeat;
-  position: absolute;
-  z-index: -1;
-  height: 200vh;
-  width: 100vw;
-}
-
-main {
-  height: 100%;
-  flex-grow: 1;
+@layer components {
+	.basket-title {
+		left: calc(100% + 10px);
+		top: 0px;
+	}
 }
 
 @layer utilities {

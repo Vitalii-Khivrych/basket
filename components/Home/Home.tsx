@@ -19,6 +19,7 @@ export const HomePage = () => {
 
 	return (
 		<section className="py-5">
+			<h1 className="sr-only">Simple site with basket</h1>
 			<div className="container">
 				<MenuList list={menu} click={handleClickAddToBasket} />
 			</div>
